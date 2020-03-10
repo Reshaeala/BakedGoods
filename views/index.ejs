@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <%- include ('./partials/head.ejs') %>
+</head>
+
+<body>
+  <header>
+    <h1 class="display-2 text-center">Cakes, Treats, & Crafts</h1>
+  </header>
+  <main>
+
+    <div class="card">
+      <img src="https://images.squarespace-cdn.com/content/v1/56573b61e4b0e19716fdf35c/1448558554816-FGHHYZ2O92U3YMXHJT71/ke17ZwdGBToddI8pDm48kL3VKmwKI3leYB51VJjLFB8UqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcQ643Xlia2-fGNGmT0Ni4GzSBWYegu4Na6KP29i9RHf4IJOBaNFWew0RIOS0ELFXu/Suzy+Cakes+Background.png?format=2500w" class="card-img py-4 .bg-light">
+
+      <div class="card-img-overlay">
+
+        <h2 class="words card-text display-3 text-center align-text-bottom">A balanced diet is a cookie in each hand.</h2>
+
+      </div>
+    </div>
+
+  <div class="container">
+
+
+
+<div class="row row-cols-1 row-cols-md-3">
+
+    <%
+    for(let i = 0; i < stuff.length; i++){ %>
+      <ul>
+        <div class="col mb-4 card h-100">
+      <li>
+
+              <img class="card-img-top mt-2 img-thumbnail" src="<%=stuff[i].image%>">
+              <div class="card-body">
+              <a class="card-title mx-auto text-center text-decoration-none" href="/baking/<%=stuff[i].id%>">
+                <p>  <%=stuff[i].name;%>
+                </a>
+                </p>
+                <!-- <form action="/baking/<%=stuff[i].id; %>?_method=DELETE" method="post">
+                  <input type="submit" value="Delete">
+                </form> -->
+
+              </li>
+            </ul>
+            <%
+          }
+          %>
+        </div>
+    </div>
+  </div>
+</div>
+
+  <nav>
+    <a  class="btn btn-info "href="/baking/new">New Desert Items</a>
+  </nav>
+    </main>
+</body>
+</html>
